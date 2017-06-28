@@ -9,35 +9,35 @@ using Pear.InteractionEngine.Events;
 
 namespace Pear.InteractionEngine.EventListeners
 {
-	public class Grab : MonoBehaviour, IEventListener<float>
+	/// <summary>
+	/// Grabs an object based on the event's value
+	/// </summary>
+	public class Grab : MonoBehaviour, IEventListener<bool>
 	{
-		// Start grabbing the model after this threshold is reached
-		public const float GrabThreshold = 0.9f;
+		private Transform _originalParent = null;
 
-		private Transform originalParent = null;
-
-		private ObjectWithAnchor objWithAnchor;
+		private ObjectWithAnchor _objWithAnchor;
 
 		private void Start()
 		{
-			objWithAnchor = transform.GetOrAddComponent<ObjectWithAnchor>();
+			_objWithAnchor = transform.GetOrAddComponent<ObjectWithAnchor>();
 		}
 
-		public void ValueChanged(EventArgs<float> args)
+		public void ValueChanged(EventArgs<bool> args)
 		{
 			// This assumes that the object the event script is attached to is the object we follow
 			Transform objToFollow = args.Source.transform;
 
 			// When the user starts grabbing, grab the object
-			if (originalParent == null && args.NewValue > GrabThreshold)
+			if (_originalParent == null && args.NewValue)
 			{
-				originalParent = GrabObj(objWithAnchor, objToFollow);
+				_originalParent = GrabObj(_objWithAnchor, objToFollow);
 			}
 			// When the user stops grabbing release the object
-			else if (originalParent != null && args.NewValue < GrabThreshold)
+			else if (_originalParent != null && args.NewValue)
 			{
-				ReleaseObj(objWithAnchor, originalParent);
-				originalParent = null;
+				ReleaseObj(_objWithAnchor, _originalParent);
+				_originalParent = null;
 			}
 		}
 

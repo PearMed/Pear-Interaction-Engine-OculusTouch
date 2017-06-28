@@ -4,6 +4,9 @@ using UnityEngine;
 
 namespace Pear.InteractionEngine.Controllers
 {
+	/// <summary>
+	/// Default class for Oculus Touch controllers
+	/// </summary>
 	public class OculusTouchController : Controller
 	{
 		// Hand element that will tell us if the controller is active or not
