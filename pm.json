@@ -1,0 +1,7 @@
+{
+	"id": "pear-med-pieOT",
+	"alias": "pieot",
+	"actions": {
+		"sync": "git pull"
+	}
+}
