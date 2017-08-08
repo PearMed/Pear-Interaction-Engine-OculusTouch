@@ -9,6 +9,9 @@ namespace Pear.InteractionEngine.Controllers
 	/// </summary>
 	public class OculusTouchController : Controller
 	{
+		[Tooltip("The other oculus touch controller")]
+		public OculusTouchController OtherTouchController;
+
 		// Hand element that will tell us if the controller is active or not
 		private GameObject _handRenderElement;
 
