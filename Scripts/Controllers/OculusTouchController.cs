@@ -25,7 +25,7 @@ namespace Pear.InteractionEngine.Controllers
 		/// Specify the controller and get the hand render element
 		/// which we use to tell if the controller is in use or not
 		/// </summary>
-		public override void Start()
+		protected override void Start()
 		{
 			base.Start();
 
