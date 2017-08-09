@@ -18,6 +18,8 @@ namespace Pear.InteractionEngine.EventListeners
 
 		private ObjectWithAnchor _objWithAnchor;
 
+		private bool _grabbing = false;
+
 		private void Start()
 		{
 			_objWithAnchor = transform.GetOrAddComponent<ObjectWithAnchor>();
@@ -29,12 +31,12 @@ namespace Pear.InteractionEngine.EventListeners
 			Transform objToFollow = args.Source.transform;
 
 			// When the user starts grabbing, grab the object
-			if (_originalParent == null && args.NewValue)
+			if (!_grabbing && args.NewValue)
 			{
 				_originalParent = GrabObj(_objWithAnchor, objToFollow);
 			}
 			// When the user stops grabbing release the object
-			else if (_originalParent != null && args.NewValue)
+			else if (_grabbing && args.NewValue)
 			{
 				ReleaseObj(_objWithAnchor, _originalParent);
 				_originalParent = null;
@@ -47,10 +49,11 @@ namespace Pear.InteractionEngine.EventListeners
 		/// <param name="objectToGrab">object to grab</param>
 		/// <param name="newParent">New parent of the given object to grab</param>
 		/// <returns>old parent</returns>
-		private static Transform GrabObj(ObjectWithAnchor objectToGrab, Transform newParent)
+		private Transform GrabObj(ObjectWithAnchor objectToGrab, Transform newParent)
 		{
 			Transform parent = objectToGrab.AnchorElement.transform.parent;
 			objectToGrab.AnchorElement.transform.SetParent(newParent, true);
+			_grabbing = true;
 			return parent;
 		}
 
@@ -62,6 +65,7 @@ namespace Pear.InteractionEngine.EventListeners
 		private void ReleaseObj(ObjectWithAnchor objectToRelease, Transform originalParent)
 		{
 			objectToRelease.AnchorElement.transform.SetParent(originalParent, true);
+			_grabbing = false;
 		}
 	}
 }
