@@ -14,6 +14,9 @@ namespace Pear.InteractionEngine.EventListeners
 	/// </summary>
 	public class Grab : MonoBehaviour, IEventListener<bool>
 	{
+		[Tooltip("Press the button a second time to release")]
+		public bool PressToRelease = false;
+
 		private Transform _originalParent = null;
 
 		private ObjectWithAnchor _objWithAnchor;
@@ -30,13 +33,16 @@ namespace Pear.InteractionEngine.EventListeners
 			// This assumes that the object the event script is attached to is the object we follow
 			Transform objToFollow = args.Source.transform;
 
+			bool grab = !_grabbing && args.NewValue;
+			bool release = _grabbing && PressToRelease == args.NewValue;
+
 			// When the user starts grabbing, grab the object
-			if (!_grabbing && args.NewValue)
+			if (grab)
 			{
 				_originalParent = GrabObj(_objWithAnchor, objToFollow);
 			}
 			// When the user stops grabbing release the object
-			else if (_grabbing && args.NewValue)
+			else if (release)
 			{
 				ReleaseObj(_objWithAnchor, _originalParent);
 				_originalParent = null;
