@@ -9,7 +9,7 @@ namespace Pear.InteractionEngine.Events
 	/// <summary>
 	/// Fires events for touch controls
 	/// </summary>
-	public class TouchControl : ControllerBehavior<OculusTouchController>, IEvent<bool>
+	public class TouchControl : ControllerBehavior<OculusController>, IEvent<bool>
 	{
 		[Tooltip("The touch control who's change we're listening for")]
 		public OVRInput.Touch Touch;

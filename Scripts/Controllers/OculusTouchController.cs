@@ -7,7 +7,7 @@ namespace Pear.InteractionEngine.Controllers
 	/// <summary>
 	/// Default class for Oculus Touch controllers
 	/// </summary>
-	public class OculusTouchController : Controller
+	public class OculusTouchController : OculusController
 	{
 		[Tooltip("The other oculus touch controller")]
 		public OculusTouchController OtherTouchController;
@@ -15,13 +15,12 @@ namespace Pear.InteractionEngine.Controllers
 		// Hand element that will tell us if the controller is active or not
 		private GameObject _handRenderElement;
 
-		/// <summary>
-		/// Specifies whether this is the left of right OVR controller
-		/// </summary>
-		public OVRInput.Controller OVRController
+		public override OVRInput.Controller OVRController
 		{
-			get;
-			private set;
+			get
+			{
+				return Location == ControllerLocation.LeftHand ? OVRInput.Controller.LTouch : OVRInput.Controller.RTouch;
+			}
 		}
 
 		/// <summary>
@@ -31,9 +30,6 @@ namespace Pear.InteractionEngine.Controllers
 		protected override void Start()
 		{
 			base.Start();
-
-			OVRController = Location == ControllerLocation.LeftHand ? OVRInput.Controller.LTouch : OVRInput.Controller.RTouch;
-
 			GetHandRenderElement();
 		}
 
