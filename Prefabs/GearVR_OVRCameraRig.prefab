@@ -133,7 +133,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4742264111109338}
   - component: {fileID: 114394425323140094}
-  - component: {fileID: 114020501341541430}
   - component: {fileID: 114595764951360652}
   m_Layer: 0
   m_Name: Screen
@@ -2195,24 +2194,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!114 &114020501341541430
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1170351731137158}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69059ad2ac0c9a549a65d6432be3bd65, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  EventName: Select
-  Event: {fileID: 114595764951360652}
-  ValueConverter: {fileID: 0}
-  EventController: {fileID: 114394425323140094}
-  EventPropertyType: System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-  EventHandlerPropertyType: System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral,
-    PublicKeyToken=b77a5c561934e089
 --- !u!114 &114048729084473894
 MonoBehaviour:
   m_ObjectHideFlags: 1
