@@ -40,11 +40,11 @@ GameObject:
   - component: {fileID: 114791445772091972}
   - component: {fileID: 114223368747727730}
   - component: {fileID: 114746531071917980}
-  - component: {fileID: 114506259086493972}
-  - component: {fileID: 114874780317559034}
   - component: {fileID: 114227636356228552}
   - component: {fileID: 114670212464187784}
   - component: {fileID: 114839995039748102}
+  - component: {fileID: 114747426917709092}
+  - component: {fileID: 114587135858417318}
   m_Layer: 0
   m_Name: Left GearVRController
   m_TagString: Untagged
@@ -316,6 +316,8 @@ GameObject:
   - component: {fileID: 20146476644512468}
   - component: {fileID: 114583179813303638}
   - component: {fileID: 114187328158917596}
+  - component: {fileID: 114676245672361770}
+  - component: {fileID: 114105936247151064}
   m_Layer: 0
   m_Name: CenterEyeAnchor
   m_TagString: MainCamera
@@ -706,11 +708,11 @@ GameObject:
   - component: {fileID: 114443353826809148}
   - component: {fileID: 114240501948050652}
   - component: {fileID: 114035781094961484}
-  - component: {fileID: 114941644529544096}
-  - component: {fileID: 114503385040454016}
   - component: {fileID: 114710138290026592}
   - component: {fileID: 114019301573561982}
   - component: {fileID: 114557760521726364}
+  - component: {fileID: 114535735960308484}
+  - component: {fileID: 114666946433267208}
   m_Layer: 0
   m_Name: Right GearVRController
   m_TagString: Untagged
@@ -3201,12 +3203,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: Pear.InteractionEngine.Controllers.ControllerEvent, Assembly-CSharp,
-      Version=1.0.2.6321, Culture=neutral, PublicKeyToken=null
+      Version=1.0.2.7817, Culture=neutral, PublicKeyToken=null
   OnStart:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: Pear.InteractionEngine.Controllers.ControllerEvent, Assembly-CSharp,
-      Version=1.0.2.6321, Culture=neutral, PublicKeyToken=null
+      Version=1.0.2.7817, Culture=neutral, PublicKeyToken=null
   _activeObjects: []
 --- !u!114 &114035781094961484
 MonoBehaviour:
@@ -3223,6 +3225,22 @@ MonoBehaviour:
   Drawer: {fileID: 114294324418098570}
   Slicer: {fileID: 114443353826809148}
   ShowActionMenu: 0
+--- !u!114 &114105936247151064
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1212064214776222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54476fbf80f0f824aa161e8103592fd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EventName: Select
+  EventListener: {fileID: 114676245672361770}
+  EventListenerPropertyType: System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral,
+    PublicKeyToken=b77a5c561934e089
+  ReceiveEventState: 1
 --- !u!114 &114106502547786854
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3398,12 +3416,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: Pear.InteractionEngine.Controllers.ControllerEvent, Assembly-CSharp,
-      Version=1.0.2.6321, Culture=neutral, PublicKeyToken=null
+      Version=1.0.2.7817, Culture=neutral, PublicKeyToken=null
   OnStart:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: Pear.InteractionEngine.Controllers.ControllerEvent, Assembly-CSharp,
-      Version=1.0.2.6321, Culture=neutral, PublicKeyToken=null
+      Version=1.0.2.7817, Culture=neutral, PublicKeyToken=null
   _activeObjects: []
 --- !u!114 &114406213552800618
 MonoBehaviour:
@@ -3486,7 +3504,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _controller: {fileID: 114670212464187784}
   Button: 1024
---- !u!114 &114503385040454016
+--- !u!114 &114517000460992282
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1649248303023200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 336b30dbde046ad4485bcabc60706c3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _controller: {fileID: 114583179813303638}
+  Button: 32
+--- !u!114 &114535735960308484
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -3529,35 +3560,6 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
---- !u!114 &114506259086493972
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1008457837017342}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54476fbf80f0f824aa161e8103592fd0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  EventName: Select
-  EventListener: {fileID: 114874780317559034}
-  EventListenerPropertyType: System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral,
-    PublicKeyToken=b77a5c561934e089
-  ReceiveEventState: 1
---- !u!114 &114517000460992282
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1649248303023200}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 336b30dbde046ad4485bcabc60706c3e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _controller: {fileID: 114583179813303638}
-  Button: 32
 --- !u!114 &114557760521726364
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3595,18 +3597,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87f2f63222a0724479652b701a40ac9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Location: 0
+  Location: 3
   OnAwake:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: Pear.InteractionEngine.Controllers.ControllerEvent, Assembly-CSharp,
-      Version=1.0.2.6321, Culture=neutral, PublicKeyToken=null
+      Version=1.0.2.7817, Culture=neutral, PublicKeyToken=null
   OnStart:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: Pear.InteractionEngine.Controllers.ControllerEvent, Assembly-CSharp,
-      Version=1.0.2.6321, Culture=neutral, PublicKeyToken=null
+      Version=1.0.2.7817, Culture=neutral, PublicKeyToken=null
   _activeObjects: []
+  GearVRControllers:
+  - {fileID: 114670212464187784}
+  - {fileID: 114019301573561982}
+--- !u!114 &114587135858417318
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1008457837017342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54476fbf80f0f824aa161e8103592fd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EventName: Select
+  EventListener: {fileID: 114747426917709092}
+  EventListenerPropertyType: System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral,
+    PublicKeyToken=b77a5c561934e089
+  ReceiveEventState: 1
 --- !u!114 &114595764951360652
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3666,6 +3687,22 @@ MonoBehaviour:
   useRotationTracking: 1
   useIPDInPositionTracking: 1
   resetTrackerOnLoad: 0
+--- !u!114 &114666946433267208
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1650034312062150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54476fbf80f0f824aa161e8103592fd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EventName: Select
+  EventListener: {fileID: 114535735960308484}
+  EventListenerPropertyType: System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral,
+    PublicKeyToken=b77a5c561934e089
+  ReceiveEventState: 1
 --- !u!114 &114670212464187784
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3682,13 +3719,56 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: Pear.InteractionEngine.Controllers.ControllerEvent, Assembly-CSharp,
-      Version=1.0.2.6321, Culture=neutral, PublicKeyToken=null
+      Version=1.0.2.7817, Culture=neutral, PublicKeyToken=null
   OnStart:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: Pear.InteractionEngine.Controllers.ControllerEvent, Assembly-CSharp,
-      Version=1.0.2.6321, Culture=neutral, PublicKeyToken=null
+      Version=1.0.2.7817, Culture=neutral, PublicKeyToken=null
   _activeObjects: []
+--- !u!114 &114676245672361770
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1212064214776222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4f8242ca9834f7419f7191513ac9fa4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TrueEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 114187328158917596}
+        m_MethodName: set_Click
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+  FalseEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 114187328158917596}
+        m_MethodName: set_Click
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!114 &114710138290026592
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3744,6 +3824,49 @@ MonoBehaviour:
   Drawer: {fileID: 114000533658613916}
   Slicer: {fileID: 114791445772091972}
   ShowActionMenu: 0
+--- !u!114 &114747426917709092
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1008457837017342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4f8242ca9834f7419f7191513ac9fa4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TrueEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 114223368747727730}
+        m_MethodName: set_Click
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+  FalseEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 114223368747727730}
+        m_MethodName: set_Click
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!114 &114771019624182478
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3837,49 +3960,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_model: {fileID: 1440752819650164}
   m_controller: 16777216
---- !u!114 &114874780317559034
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1008457837017342}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b4f8242ca9834f7419f7191513ac9fa4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TrueEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 114223368747727730}
-        m_MethodName: set_Click
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
-  FalseEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 114223368747727730}
-        m_MethodName: set_Click
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
 --- !u!114 &114926912791183424
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3893,22 +3973,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _controller: {fileID: 114670212464187784}
   Control: 4
---- !u!114 &114941644529544096
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1650034312062150}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54476fbf80f0f824aa161e8103592fd0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  EventName: Select
-  EventListener: {fileID: 114503385040454016}
-  EventListenerPropertyType: System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral,
-    PublicKeyToken=b77a5c561934e089
-  ReceiveEventState: 1
 --- !u!120 &120513219969155780
 LineRenderer:
   m_ObjectHideFlags: 1
