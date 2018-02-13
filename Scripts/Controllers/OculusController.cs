@@ -1,4 +1,4 @@
-﻿using Pear.InteractionEngine.Interactions;
+﻿using Pear.InteractionEngine.Interactions.Pointers;
 
 namespace Pear.InteractionEngine.Controllers
 {
@@ -8,7 +8,7 @@ namespace Pear.InteractionEngine.Controllers
 	public abstract class OculusController : Controller
 	{
 		// This controller's UI pointer
-		private UIPointer _pointer;
+		public UIPointer _pointer;
 
 		/// <summary>
 		/// Specifies whether this is the left of right OVR controller
@@ -16,13 +16,6 @@ namespace Pear.InteractionEngine.Controllers
 		public abstract OVRInput.Controller OVRController
 		{
 			get;
-		}
-
-		protected override void Awake()
-		{
-			base.Awake();
-
-			_pointer = GetComponent<UIPointer>();
 		}
 
 		protected override void Start ()
